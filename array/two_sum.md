@@ -16,8 +16,11 @@ return [0, 1].
 ```
 
 ## 思路
+
+### O(n^2)
 转化问题为两个数的组合, 因此用两个循环就能解决了
 
+Python: 
 ```python
 class Solution(object):
     def twoSum(self, nums, target):
@@ -36,3 +39,11 @@ class Solution(object):
                 j += 1
             i += 1
 ```
+
+Time complexity: O(n + (n - 1) + .. 1) = O(n^2/2 + n/2) = O(n^2)
+Space complexity : O(1)
+
+### O(n)
+转化问题为: 给定一个数，找出另外一个数，可以等于 target 的
+
+因此使用 Hash Table，可以让查找为 O(1)
